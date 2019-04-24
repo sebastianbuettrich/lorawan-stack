@@ -16,6 +16,7 @@ package commands
 
 import (
 	"context"
+	"fmt"
 	stdio "io"
 	"os"
 
@@ -297,8 +298,12 @@ var (
 			if err != nil {
 				return err
 			}
+
 			if err := macVersion.UnmarshalText([]byte(s)); err != nil {
 				return err
+			}
+			if err := macVersion.Validate(); err != nil {
+				return fmt.Errorf("LoRaWAN version is invalid: %s", err)
 			}
 
 			setDefaults, _ := cmd.Flags().GetBool("defaults")
