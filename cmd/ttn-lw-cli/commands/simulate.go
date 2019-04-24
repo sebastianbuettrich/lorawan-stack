@@ -18,6 +18,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/base64"
+	"fmt"
 	"os"
 	"time"
 
@@ -403,6 +404,10 @@ var (
 			var joinParams simulateJoinRequestParams
 			if err := util.SetFields(&joinParams, simulateJoinRequestFlags); err != nil {
 				return err
+			}
+
+			if err := uplinkParams.LoRaWANVersion.Validate(); err != nil {
+				return fmt.Errorf("LoRaWAN version is invalid: %s", err)
 			}
 
 			processDownlink := processDownlink(&ttnpb.EndDevice{
