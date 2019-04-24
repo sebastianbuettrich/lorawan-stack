@@ -488,6 +488,10 @@ var (
 				return err
 			}
 
+			if err := uplinkParams.LoRaWANVersion.Validate(); err != nil {
+				return fmt.Errorf("LoRaWAN version is invalid: %s", err)
+			}
+
 			processDownlink := processDownlink(&ttnpb.EndDevice{
 				LoRaWANVersion:    uplinkParams.LoRaWANVersion,
 				LoRaWANPHYVersion: uplinkParams.LoRaWANPHYVersion,
