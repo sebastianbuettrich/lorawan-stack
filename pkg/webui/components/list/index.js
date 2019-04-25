@@ -97,13 +97,14 @@ class List extends React.PureComponent {
       component: Component,
       bordered,
       items,
+      listClassName,
     } = this.props
 
     const cls = classnames(className, style.wrapper, {
       [style.listBordered]: bordered,
     })
 
-    const listCls = classnames(style.list, {
+    const listCls = classnames(style.list, listClassName, {
       [style.listEmpty]: !items.length,
     })
 
@@ -128,6 +129,7 @@ List.propTypes = {
   emptyMessage: PropTypes.message,
   emptyMessageValues: PropTypes.object,
   header: PropTypes.node,
+  listClassName: PropTypes.string,
 }
 
 List.defaultProps = {
