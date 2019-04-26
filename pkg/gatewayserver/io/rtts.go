@@ -32,8 +32,8 @@ func newRTTs(max int) *rtts {
 	}
 }
 
-// Add adds the given round-trip time.
-func (r *rtts) Add(d time.Duration) {
+// Record records the given round-trip time.
+func (r *rtts) Record(d time.Duration) {
 	r.mu.Lock()
 	r.items = append(r.items, d)
 	if len(r.items) > r.max {
@@ -42,7 +42,7 @@ func (r *rtts) Add(d time.Duration) {
 	r.mu.Unlock()
 }
 
-// Last returns the last measured round-trip time.
+// Last returns the last recorded round-trip time.
 func (r *rtts) Last() (time.Duration, bool) {
 	r.mu.RLock()
 	defer r.mu.RUnlock()
@@ -52,7 +52,7 @@ func (r *rtts) Last() (time.Duration, bool) {
 	return r.items[len(r.items)-1], true
 }
 
-// Stats returns the min, max, average (median) and number of round-trip times.
+// Stats returns the min, max, average (median) and number of recorded round-trip times.
 func (r *rtts) Stats() (min, max, avg time.Duration, count int) {
 	r.mu.RLock()
 	sorted := append(make([]time.Duration, 0, len(r.items)), r.items...)
