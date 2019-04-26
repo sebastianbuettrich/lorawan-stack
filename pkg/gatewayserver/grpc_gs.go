@@ -52,5 +52,13 @@ func (gs *GatewayServer) GetGatewayConnectionStats(ctx context.Context, ids *ttn
 		stats.LastDownlinkReceivedAt = &t
 		stats.DownlinkCount = c
 	}
+	if min, max, avg, count := conn.RTTStats(); count > 0 {
+		stats.RoundTripTimes = &ttnpb.GatewayConnectionStats_RoundTripTimes{
+			Min:     min,
+			Max:     max,
+			Average: avg,
+			Count:   uint32(count),
+		}
+	}
 	return stats, nil
 }
