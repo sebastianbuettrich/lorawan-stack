@@ -35,7 +35,7 @@ export default defineMessages({
   ntwkSEncKeyDescription: 'Network Session Encryption Key (only for LoRaWAN 1.1+)',
   validate8: 'This value needs to be exactly 8 characters long',
   validate16: 'This value needs to be exactly 16 characters long',
-  validate32: 'This values needs to be exactly 32 characters long',
+  validate32: 'This value needs to be exactly 32 characters long',
   supportsClassC: 'Supports Class C',
   activationMode: 'Activation Mode',
   otaa: 'Over The Air Activation (OTAA)',
