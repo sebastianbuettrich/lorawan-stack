@@ -14,9 +14,9 @@
 
 import React, { Component } from 'react'
 import { Container, Col, Row } from 'react-grid-system'
-import { connect } from 'react-redux'
 import bind from 'autobind-decorator'
 import { push } from 'connected-react-router'
+import { connect } from 'react-redux'
 
 import Form from '../../../components/form'
 import Field from '../../../components/field'
@@ -44,9 +44,7 @@ import style from './device-add.styl'
     />
   )
 })
-@connect(({ user }) => ({
-  userId: user.user.ids.user_id,
-}))
+@connect()
 @bind
 export default class DeviceAdd extends Component {
   state = {
