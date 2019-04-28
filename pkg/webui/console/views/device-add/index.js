@@ -34,7 +34,7 @@ import m from './messages'
 import validationSchema from './validation-schema'
 import style from './device-add.styl'
 
-@withBreadcrumb('device.add', function (props) {
+@withBreadcrumb('devices.add', function (props) {
   const { appId } = props.match.params
   return (
     <Breadcrumb
