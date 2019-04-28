@@ -283,7 +283,7 @@ export default class DeviceAdd extends Component {
                 ]}
               />
               <Field
-                title="Supports Class C"
+                title={m.supportsClassC}
                 name="supports_class_c"
                 type="checkbox"
               />
@@ -292,18 +292,18 @@ export default class DeviceAdd extends Component {
                 content={m.activationSettings}
               />
               <FieldGroup
+                title={m.activationMode}
                 name="activation_mode"
-                title="Activation Mode"
                 columns
               >
                 <Field
-                  title="Over The Air Activation (OTAA)"
+                  title={m.otaa}
                   value="otaa"
                   type="radio"
                   onChange={this.handleOTAASelect}
                 />
                 <Field
-                  title="Activation By Personalization (ABP)"
+                  title={m.abp}
                   value="abp"
                   type="radio"
                   onChange={this.handleABPSelect}
