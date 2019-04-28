@@ -58,10 +58,21 @@ export default class DeviceAdd extends Component {
 
     const device = {
       ...values,
-      ids: {
-        ...values.ids,
-      },
       frequency_plan_id: 'EU_863_870',
+    }
+
+    // Clean values based on activation mode
+    if (device.activation_mode === 'otaa') {
+      delete device.mac_settings
+      delete device.session
+    } else {
+      delete device.ids.join_eui
+      delete device.ids.dev_eui
+      delete device.root_keys
+      delete device.resets_join_nonces
+      if (device.session.dev_addr) {
+        device.ids.dev_addr = device.session.dev_addr
+      }
     }
     delete device.activation_mode
 
