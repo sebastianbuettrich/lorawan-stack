@@ -58,8 +58,8 @@ github.com/TheThingsIndustries/magepkg v0.0.0-20190214092847-6c0299b7c3ed h1:rsG
 github.com/TheThingsIndustries/magepkg v0.0.0-20190214092847-6c0299b7c3ed/go.mod h1:InVSk9cxzZR1y4QaHF4CbDQ/uFeoTnbJfnwiKM04UNo=
 github.com/TheThingsIndustries/mystique v0.0.0-20181023142449-f12a32cee6d6 h1:bU/mzNwvlF6Rn/5Qk9g8+/bSWmK2Iz+9XaemmJo4nBk=
 github.com/TheThingsIndustries/mystique v0.0.0-20181023142449-f12a32cee6d6/go.mod h1:l1YfNoSNxng8UF9XBfDixHAQjMEMAyoEQnbKSqX/qII=
-github.com/TheThingsIndustries/release-notes v0.0.1-rc1 h1:X+PDLj/ALYNIcvXyAOmPyA2grClx4PqUTNrV5kL7SqQ=
-github.com/TheThingsIndustries/release-notes v0.0.1-rc1/go.mod h1:jFS4T76oWQ9pkL5N/8wnYMiCycTQ+w1bjQI/rwZSOJM=
+github.com/TheThingsIndustries/release-notes v0.0.1 h1:iIEaEP1Es6gQtXByGzSnaB3WcYP1yDPl4PNqdUR2SWM=
+github.com/TheThingsIndustries/release-notes v0.0.1/go.mod h1:jFS4T76oWQ9pkL5N/8wnYMiCycTQ+w1bjQI/rwZSOJM=
 github.com/TheThingsNetwork/go-cayenne-lib v1.0.0 h1:be7h6E/69+qaYs1iwQ2xjGjSFPXzvU3q6AWBCWayG2Y=
 github.com/TheThingsNetwork/go-cayenne-lib v1.0.0/go.mod h1:Lkg0oDuFTF6WlZvyPV35WFHov5U9zPv2lLoAQ15NjrI=
 github.com/ThethingsIndustries/grpc-gateway v1.7.0-gogo h1:4KV6I1ds1U4F91k28Ct5CzO76dhqcqQjFKortbf4UMo=

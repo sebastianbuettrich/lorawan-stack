@@ -15,7 +15,7 @@ require (
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/TheThingsIndustries/magepkg v0.0.0-20190214092847-6c0299b7c3ed
 	github.com/TheThingsIndustries/mystique v0.0.0-20181023142449-f12a32cee6d6
-	github.com/TheThingsIndustries/release-notes v0.0.1-rc1
+	github.com/TheThingsIndustries/release-notes v0.0.1
 	github.com/TheThingsNetwork/go-cayenne-lib v1.0.0
 	github.com/aws/aws-sdk-go v1.19.12
 	github.com/blang/semver v3.5.1+incompatible
