@@ -100,7 +100,7 @@ export default class DeviceAdd extends Component {
     this.setState({ otaa: false })
   }
 
-  ABPSection (props) {
+  get ABPSection () {
     return (
       <React.Fragment>
         <Field
@@ -157,7 +157,7 @@ export default class DeviceAdd extends Component {
     )
   }
 
-  OTAASection () {
+  get OTAASection () {
     return (
       <React.Fragment>
         <Field
@@ -327,7 +327,7 @@ export default class DeviceAdd extends Component {
                   onChange={this.handleABPSelect}
                 />
               </FieldGroup>
-              {otaa ? this.OTAASection() : this.ABPSection()}
+              {otaa ? this.OTAASection : this.ABPSection}
               <SubmitBar>
                 <Button type="submit" message={m.createDevice} />
               </SubmitBar>
