@@ -217,7 +217,6 @@ const Field = function (props) {
       <Component
         className={style.component}
         id={id}
-        component={type === 'textarea' ? 'textarea' : undefined}
         key={key}
         {...filterPropsByType(type, rest)}
       />
