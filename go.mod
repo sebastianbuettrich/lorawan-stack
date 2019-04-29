@@ -15,7 +15,7 @@ require (
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/TheThingsIndustries/magepkg v0.0.0-20190214092847-6c0299b7c3ed
 	github.com/TheThingsIndustries/mystique v0.0.0-20181023142449-f12a32cee6d6
-	github.com/TheThingsIndustries/release-notes v0.0.1-rc1 // indirect
+	github.com/TheThingsIndustries/release-notes v0.0.1-rc1
 	github.com/TheThingsNetwork/go-cayenne-lib v1.0.0
 	github.com/aws/aws-sdk-go v1.19.12
 	github.com/blang/semver v3.5.1+incompatible
@@ -24,6 +24,7 @@ require (
 	github.com/cpuguy83/go-md2man v1.0.10 // indirect
 	github.com/disintegration/imaging v1.6.0
 	github.com/eclipse/paho.mqtt.golang v1.1.1
+	github.com/erikstmartin/go-testdb v0.0.0-20160219214506-8d10e4a1bae5 // indirect
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/getsentry/raven-go v0.2.0
 	github.com/go-mail/mail v2.3.1+incompatible
@@ -43,9 +44,14 @@ require (
 	github.com/heptiolabs/healthcheck v0.0.0-20180807145615-6ff867650f40
 	github.com/howeyc/gopass v0.0.0-20170109162249-bf9dde6d0d2c
 	github.com/jacobsa/crypto v0.0.0-20190317225127-9f44e2d11115
+	github.com/jacobsa/oglematchers v0.0.0-20150720000706-141901ea67cd // indirect
+	github.com/jacobsa/oglemock v0.0.0-20150831005832-e94d794d06ff // indirect
+	github.com/jacobsa/ogletest v0.0.0-20170503003838-80d50a735a11 // indirect
+	github.com/jacobsa/reqtrace v0.0.0-20150505043853-245c9e0234cb // indirect
 	github.com/jarcoal/httpmock v1.0.3
 	github.com/jaytaylor/html2text v0.0.0-20190408195923-01ec452cbe43
 	github.com/jinzhu/gorm v1.9.4
+	github.com/jinzhu/now v1.0.0 // indirect
 	github.com/kr/pretty v0.1.0
 	github.com/labstack/echo/v4 v4.0.0-00010101000000-000000000000
 	github.com/labstack/gommon v0.2.8
@@ -84,6 +90,7 @@ require (
 	google.golang.org/genproto v0.0.0-20190415143225-d1146b9035b9
 	google.golang.org/grpc v1.20.0
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
+	gopkg.in/mail.v2 v2.3.1 // indirect
 	gopkg.in/sourcemap.v1 v1.0.5 // indirect
 	gopkg.in/square/go-jose.v2 v2.3.1
 	gopkg.in/yaml.v2 v2.2.2
