@@ -15,7 +15,6 @@
 package ttnpb
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 
@@ -634,9 +633,8 @@ var errParsingSemanticVersion = unexpectedValue(
 
 // Validate reports whether v represents a valid MACVersion.
 func (v MACVersion) Validate() error {
-	max := MACVersion(len(MACVersion_name) - 1)
 	if v < 1 || v >= MACVersion(len(MACVersion_name)) {
-		return errExpectedBetween("MACVersion", fmt.Sprintf("%d(%s)", 1, MACVersion(1)), fmt.Sprintf("%d(%s)", max, MACVersion(max)))(v)
+		return errExpectedBetween("MACVersion", 1, len(MACVersion_name)-1)(v)
 	}
 
 	_, err := semver.Parse(v.String())
@@ -694,9 +692,8 @@ func (v MACVersion) HasMaxFCntGap() bool {
 
 // Validate reports whether v represents a valid PHYVersion.
 func (v PHYVersion) Validate() error {
-	max := PHYVersion(len(PHYVersion_name) - 1)
-	if v < 1 || v > max {
-		return errExpectedBetween("PHYVersion", fmt.Sprintf("%d(%s)", 1, PHYVersion(1)), fmt.Sprintf("%d(%s)", max, PHYVersion(max)))(v)
+	if v < 1 || v >= PHYVersion(len(PHYVersion_name)) {
+		return errExpectedBetween("PHYVersion", 1, len(PHYVersion_name)-1)(v)
 	}
 
 	_, err := semver.Parse(v.String())
