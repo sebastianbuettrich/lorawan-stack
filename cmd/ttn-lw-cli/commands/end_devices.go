@@ -16,7 +16,6 @@ package commands
 
 import (
 	"context"
-	"fmt"
 	stdio "io"
 	"os"
 
@@ -67,11 +66,13 @@ func forwardDeprecatedDeviceFlags(flagSet *pflag.FlagSet) {
 }
 
 var (
-	errNoEndDeviceID                = errors.DefineInvalidArgument("no_end_device_id", "no end device ID set")
-	errNoEndDeviceEUI               = errors.DefineInvalidArgument("no_end_device_eui", "no end device EUIs set")
-	errInconsistentEndDeviceEUI     = errors.DefineInvalidArgument("inconsistent_end_device_eui", "given end device EUIs do not match registered EUIs")
 	errEndDeviceEUIUpdate           = errors.DefineInvalidArgument("end_device_eui_update", "end device EUIs can not be updated")
 	errEndDeviceKeysWithProvisioner = errors.DefineInvalidArgument("end_device_keys_provisioner", "end device ABP or OTAA keys cannot be set when there is a provisioner")
+	errInconsistentEndDeviceEUI     = errors.DefineInvalidArgument("inconsistent_end_device_eui", "given end device EUIs do not match registered EUIs")
+	errInvalidMACVerson             = errors.DefineInvalidArgument("mac_version", "LoRaWAN MAC version is invalid")
+	errInvalidPHYVerson             = errors.DefineInvalidArgument("phy_version", "LoRaWAN PHY version is invalid")
+	errNoEndDeviceEUI               = errors.DefineInvalidArgument("no_end_device_eui", "no end device EUIs set")
+	errNoEndDeviceID                = errors.DefineInvalidArgument("no_end_device_id", "no end device ID set")
 )
 
 func getEndDeviceID(flagSet *pflag.FlagSet, args []string, requireID bool) (*ttnpb.EndDeviceIdentifiers, error) {
@@ -303,7 +304,7 @@ var (
 				return err
 			}
 			if err := macVersion.Validate(); err != nil {
-				return fmt.Errorf("LoRaWAN version is invalid: %s", err)
+				return errInvalidMACVerson.WithCause(err)
 			}
 
 			setDefaults, _ := cmd.Flags().GetBool("defaults")

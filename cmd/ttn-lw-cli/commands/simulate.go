@@ -407,11 +407,11 @@ var (
 			}
 
 			if err := uplinkParams.LoRaWANVersion.Validate(); err != nil {
-				return fmt.Errorf("LoRaWAN version is invalid: %s", err)
+				return errInvalidMACVerson.WithCause(err)
 			}
 
 			if err := uplinkParams.LoRaWANPHYVersion.Validate(); err != nil {
-				return fmt.Errorf("LoRaWAN PHY version is invalid: %s", err)
+				return errInvalidPHYVerson.WithCause(err)
 			}
 
 			processDownlink := processDownlink(&ttnpb.EndDevice{
