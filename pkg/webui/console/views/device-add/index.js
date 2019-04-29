@@ -89,8 +89,9 @@ export default class DeviceAdd extends Component {
       dispatch(push(`/console/applications/${appId}/devices/${device_id}`))
     } catch (error) {
       resetForm(values)
+      const err = error instanceof Error ? sharedMessages.genericError : error
 
-      await this.setState({ error })
+      await this.setState({ error: err })
     }
   }
 
